@@ -1,4 +1,4 @@
-package example
+package aoc
 
 class HelloSuite extends munit.FunSuite {
   test("numbers") {
