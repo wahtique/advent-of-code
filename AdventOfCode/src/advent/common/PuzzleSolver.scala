@@ -36,7 +36,7 @@ trait PuzzleSolver[I, O]:
 
   def solve1(inputFile: String): IO[O] = solve1(parsedInput(inputFile))
 
-  def solve1(input: IO[I]): IO[O] = input.map(solve2)
+  def solve1(input: IO[I]): IO[O] = input.map(solve1)
 
   def solve1(input: I): O = solutionPart1(input)
 

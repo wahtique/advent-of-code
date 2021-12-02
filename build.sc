@@ -8,9 +8,8 @@ object AdventOfCode extends ScalaModule {
   )
   object test extends Tests {
     def ivyDeps = Agg(
-      ivy"org.scalameta::munit:1.0.0-M1",
-      ivy"org.typelevel::munit-cats-effect-3:1.0.6"
+      ivy"com.disneystreaming::weaver-cats:0.7.6"
     )
-    def testFrameworks = Seq("munit.Framework")
+    def testFramework = "weaver.framework.CatsEffect"
   }
 }
