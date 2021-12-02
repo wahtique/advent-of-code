@@ -4,6 +4,7 @@ import advent.common.PuzzleSolver
 import cats.effect.IOApp
 
 import scala.io.BufferedSource
+import cats.effect.IOApp
 
 object Day01 extends PuzzleSolver[List[Int], Int]:
   override val parse = (source: BufferedSource) =>
