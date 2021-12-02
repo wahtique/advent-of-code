@@ -30,12 +30,15 @@ import cats.effect.IOApp
 
 import scala.io.BufferedSource
 
-object Day${day} extends PuzzleSolver[List[Int], Int]:
-  override val parse = (source: BufferedSource) => ???
-  override val solutionPart1 = (input: List[Int]) => ???
-  override val solutionPart2 = (input: List[Int]) => ???
+type Input = ???
+type Output = ???
 
-object Main extends IOApp.Simple:
+object Day${day} extends PuzzleSolver[Input, Output]:
+  override val parse = (source: BufferedSource) => ???
+  override val solutionPart1 = (input: Input) => ???
+  override val solutionPart2 = (input: Input) => ???
+
+object Day${day}App extends IOApp.Simple:
   val run = Day${day}.printSolutions("${dayresourcefile}")
 EOT
 
@@ -48,17 +51,17 @@ cat <<EOT > ${daytestfile}
 package advent.y${year}
 
 import cats.effect.IO
-import munit.CatsEffectSuite
+import weaver._
 
-class Day${day}Suite extends CatsEffectSuite:
+object Day${day}Suite extends SimpleIOSuite:
   test("part 1") {
     Day${day}
       .solve1("${daytestresourcefile}")
-      .flatMap(result => IO(assertEquals(result, ???)))
+      .flatMap(result => IO(expect.eql(result, ???)))
   }
   test("part 2") {
     Day${day}
       .solve2("${daytestresourcefile}")
-      .flatMap(result => IO(assertEquals(result, ???)))
+      .flatMap(result => IO(expect.eql(result, ???)))
   }
 EOT

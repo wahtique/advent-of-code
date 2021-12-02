@@ -13,5 +13,5 @@ object Day01 extends PuzzleSolver[List[Int], Int]:
   override val solutionPart2 = (input: List[Int]) =>
     input.sliding(3).map(_.sum).sliding(2).count(w => w.head < w.last)
 
-object Main extends IOApp.Simple:
+object Day01App extends IOApp.Simple:
   val run = Day01.printSolutions("AdventOfCode/resources/y2021/Day01.txt")
