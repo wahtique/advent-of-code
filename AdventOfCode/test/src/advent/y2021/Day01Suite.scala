@@ -9,7 +9,7 @@ object Day01Suite extends SimpleIOSuite:
       .solve1("AdventOfCode/test/resources/y2021/Day01.txt")
       .flatMap(result => IO(expect.eql(result, 7)))
   }
-  test("part2") {
+  test("part 2") {
     Day01
       .solve2("AdventOfCode/test/resources/y2021/Day01.txt")
       .flatMap(result => IO(expect.eql(result, 5)))
