@@ -2,7 +2,6 @@ package advent.y2021
 
 import advent.common.PuzzleSolver
 import cats.*
-import cats.effect.IOApp
 import cats.implicits.*
 
 import scala.io.BufferedSource
@@ -61,6 +60,8 @@ type Input = Seq[Move]
 type Output = Long
 
 object Day02 extends PuzzleSolver[Input, Output]:
+
+  override val inputFileName = "AdventOfCode/resources/y2021/Day02.txt"
   override val parse = (source: BufferedSource) =>
     source.getLines.toList
       .map(_.trim.split(" ").toList)
@@ -82,6 +83,3 @@ object Day02 extends PuzzleSolver[Input, Output]:
         positionWithAim.move(move)
       }
       .dist
-
-object Day02App extends IOApp.Simple:
-  val run = Day02.printSolutions("AdventOfCode/resources/y2021/Day02.txt")

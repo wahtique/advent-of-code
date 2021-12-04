@@ -26,7 +26,6 @@ cat <<EOT > ${daysrcfile}
 package advent.y${year}
 
 import advent.common.PuzzleSolver
-import cats.effect.IOApp
 
 import scala.io.BufferedSource
 
@@ -34,12 +33,11 @@ type Input = ???
 type Output = ???
 
 object Day${day} extends PuzzleSolver[Input, Output]:
+  override val inputFileName: String = "${dayresourcefile}"
   override val parse = (source: BufferedSource) => ???
   override val solutionPart1 = (input: Input) => ???
   override val solutionPart2 = (input: Input) => ???
 
-object Day${day}App extends IOApp.Simple:
-  val run = Day${day}.printSolutions("${dayresourcefile}")
 EOT
 
 echo "Generating tests..."
